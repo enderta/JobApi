@@ -3,7 +3,6 @@ const pool = require("../../config/db.config");
 const jwt = require("jsonwebtoken");
 const secret = "secret";
 
-
 exports.registerUser = async (userData) => {
     const {username, password, email} = userData;
     const hashedPassword = await bcrypt.hash(password, 10);
