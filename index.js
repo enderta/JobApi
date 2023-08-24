@@ -18,10 +18,10 @@ app.use(cors(
 
 app.use(bodyParser.json());
 
-const userRoutes = require("./modules/users/users.route");
+const userRoutes = require("./src/modules/users/users.route");
 app.use('/api/users', userRoutes);
 
-const jobRoutes = require("./modules/jobs/jobs.route");
+const jobRoutes = require("./src/modules/jobs/jobs.route");
 app.use('/api/jobs', jobRoutes);
 
 const port = process.env.PORT;
