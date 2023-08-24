@@ -15,6 +15,7 @@ app.use(cors(
     }
 ));
 
+
 app.use(bodyParser.json());
 
 const userRoutes = require("./modules/users/users.route");
