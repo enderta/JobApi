@@ -1,10 +1,14 @@
-const express = require("express");
-const app = express();
-const cors = require("cors");
-const bodyParser = require("body-parser");
-const dotenv = require("dotenv");
+const express = require('express');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const dotenv = require('dotenv');
+
+const userRoutes = require('../src/modules/users/users.route');
+const jobRoutes = require('../src/modules/jobs/jobs.route');
 
 dotenv.config();
+
+const app = express();
 
 app.use(cors(
     {
@@ -15,16 +19,8 @@ app.use(cors(
     }
 ));
 
-
 app.use(bodyParser.json());
-
-const userRoutes = require("./src/modules/users/users.route");
 app.use('/api/users', userRoutes);
-
-const jobRoutes = require("./src/modules/jobs/jobs.route");
 app.use('/api/jobs', jobRoutes);
 
-const port = process.env.PORT;
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-});
+module.exports = app;

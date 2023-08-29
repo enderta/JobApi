@@ -3,22 +3,14 @@
   "name": "project_name",
   "builds": [
     {
-      "src": "/src/modules/users/users.route.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "/src/modules/jobs/jobs.route.js",
+      "src": "/api/index.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "/api/users/(.*)",
-      "dest": "/src/modules/users/users.route.js"
-    },
-    {
-      "src": "/api/jobs/(.*)",
-      "dest": "/src/modules/jobs/jobs.route.js"
+      "src": "/api/(.*)",
+      "dest": "/api/index.js"
     }
   ]
 }
